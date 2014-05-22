@@ -68,6 +68,12 @@ if(Meteor.isClient) {
 
 if(Meteor.isServer) {
 
+  Notes.allow({
+    insert: function() { return true; },
+    update: function() { return false; },
+    remove: function() { return false; },
+  });
+
   Meteor.publish('someNotes', function() {
     return Notes.find({}, {
       sort: {time: -1},
