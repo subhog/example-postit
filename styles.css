@@ -1,0 +1,79 @@
+body {
+  font-family: sans-serif;
+  color: #333333;
+}
+
+div, textarea, input, button {
+  box-sizing: border-box;
+}
+
+
+.area {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background: #f0f0f0;
+  overflow: hidden;
+}
+
+.input {
+  position: absolute;
+  width: 240px;
+  height: 120px;
+  margin-top: -60px;
+  margin-left: -120px;
+  background: #c0c0c0;
+  padding: 2px;
+  z-index: 2000000000;
+  font-size: 0px;
+}
+
+.field {
+  width: 236px;
+  height: 96px;
+  resize: none;
+  border: 0px solid #000000;
+  background: #ffffff;
+  margin: 0px;
+  padding: 14px;
+  -webkit-appearance: none;
+}
+
+.field:focus {
+  border: none;
+  outline: none;
+}
+
+.confirm {
+  width: 236px;
+  height: 20px;
+  line-height: 20px;
+  border: 0px;
+  background: #f0f0f0;
+  color: #0080f0;
+  font-size: 12px;
+}
+
+.note {
+  position: absolute;
+  width: 240px;
+  margin-left: -120px;
+  margin-top: -60px;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.125);
+  color: #a0a0a0;
+  padding: 15px;
+  cursor: default;
+}
+
+.note, .field {
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+
+
+
