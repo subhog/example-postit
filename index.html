@@ -16,10 +16,12 @@
       </div>
     {{/each}}
 
-    <div class="input">
-      <textarea class="field"></textarea>
-      <button class="confirm">OK</button>
-    </div>
+    {{#if displayInput}}
+      <div class="input">
+        <textarea class="field"></textarea>
+        <button class="confirm">OK</button>
+      </div>
+    {{/if}}
 
   </div>
 </template>

@@ -16,5 +16,8 @@ if(Meteor.isClient) {
     return this.y * $('.area').height();
   };
 
+  Template.area.displayInput = function() {
+    return Session.get('displayInput');
+  };
 
 }
