@@ -4,38 +4,49 @@ Notes = new Meteor.Collection('notes');
 if(Meteor.isClient) {
 
 
-  Template.area.notes = function() {
-    return Notes.find();
-  };
+  Template.area.helpers({
 
-  Template.area.x = function() {
-    return this.x * $('.area').width();
-  };
+    notes: function() {
+      return Notes.find();
+    },
 
-  Template.area.y = function() {
-    return this.y * $('.area').height();
-  };
+    x: function() {
+      return this.x * $('.area').width();
+    },
 
-  Template.area.displayInput = function() {
-    return Session.get('displayInput');
-  };
+    y: function() {
+      return this.y * $('.area').height();
+    },
 
-  Template.area.inputX = function() {
-    return Session.get('x');
-  };
+    displayInput: function() {
+      return Session.get('displayInput');
+    },
 
-  Template.area.inputY = function() {
-    return Session.get('y');
-  };
+    inputX: function() {
+      return Session.get('x');
+    },
+
+    inputY: function() {
+      return Session.get('y');
+    },
+
+  });
+
 
   Template.area.events({
 
     'click .area': function(e, t) {
+      if(! $(e.target).is('.area')) return;
+
       Session.set('x', e.clientX);
       Session.set('y', e.clientY);
+      Session.set('x%', e.clientX / t.$('.area').width());
+      Session.set('y%', e.clientY / t.$('.area').height());
+
       Session.set('displayInput', true);
     },
 
   });
+
 
 }
