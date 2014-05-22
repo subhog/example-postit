@@ -46,6 +46,18 @@ if(Meteor.isClient) {
       Session.set('displayInput', true);
     },
 
+    'click .confirm, keyup .field': function(e, t) {
+      if(e.keyCode && e.keyCode !== 13) return;
+
+      Notes.insert({
+        text: t.$('.field').val(),
+        x: Session.get('x%'),
+        y: Session.get('y%'),
+      });
+
+      Session.set('displayInput', false);
+    },
+
   });
 
 
