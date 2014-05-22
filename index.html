@@ -6,9 +6,14 @@
   {{> area}}
 </body>
 
+
 <template name="area">
   <div class="area">
-    <h1>BANANA!</h1>
+
+    {{#each notes}}
+      <div>NOTE</div>
+    {{/each}}
+
   </div>
 </template>
 
