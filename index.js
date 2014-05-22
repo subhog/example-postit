@@ -20,9 +20,19 @@ if(Meteor.isClient) {
     return Session.get('displayInput');
   };
 
+  Template.area.inputX = function() {
+    return Session.get('x');
+  };
+
+  Template.area.inputY = function() {
+    return Session.get('y');
+  };
+
   Template.area.events({
 
     'click .area': function(e, t) {
+      Session.set('x', e.clientX);
+      Session.set('y', e.clientY);
       Session.set('displayInput', true);
     },
 
