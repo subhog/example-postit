@@ -60,5 +60,27 @@ if(Meteor.isClient) {
 
   });
 
+  Meteor.subscribe('someNotes');
 
 }
+
+
+
+if(Meteor.isServer) {
+
+  Meteor.publish('someNotes', function() {
+    return Notes.find({}, {
+      sort: {time: -1},
+      limit: 42,
+    });
+  });
+
+}
+
+
+
+
+
+
+
+
